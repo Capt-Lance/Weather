@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>{{currentWeather != null ? currentWeather.name: ''}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="currentWeather">
+      <ion-card color="light">
+          <ion-card-header>
+            <h1>Current</h1>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12 class="center-items">
+                    <i  [ngClass]="weatherIconClass" class="icon--weather"></i>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col col-6 class="center-items">
+                  <ion-row class="center-items">
+                    <div>
+                      <div class="weather-group">
+                        <h2>Temperature: {{currentWeather.main.temp}}&deg;F</h2>
+                        <p class="secondary-text">High: {{currentWeather.main.temp_max}}&deg;F Low: {{currentWeather.main.temp_min}}&deg;F</p>
+                      </div>
+                      
+                      <div class="weather-group">
+                        <h2>Weather: {{currentWeather.weather[0].main}}</h2>
+                        <p class="secondary-text">{{currentWeather.weather[0].description}}</p>
+                      </div>
+
+                    </div>
+                  </ion-row>
+                </ion-col>
+                <ion-col col-6>
+                  <ion-row class="center-items">
+                    <div>
+                      <div class="weather-group">
+                        <h2>Wind: {{currentWeather.wind.speed}} MPH</h2>
+                        <p class="secondary-text">Direction: {{currentWeather.wind.deg}}&deg;</p>
+                      </div>
+                      <div class="weather-group">
+                        <h2>Humidity: {{currentWeather.main.humidity}}%</h2>
+                        <p class="secondary-text">Pressure: {{currentWeather.main.pressure}} hPa</p>
+                      </div>
+                        
+                    </div>
+
+                    </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <!-- <ion-list>
+                <ion-item color="light">
+                  
+                </ion-item>
+                <ion-item color="light">
+                  
+                </ion-item>
+            </ion-list> -->
+      
+      
+          </ion-card-content>
+        </ion-card>
+        <ion-card color="light">
+          <ion-card-header>
+              Wind
+          </ion-card-header>
+          <ion-card-content>
+            <ion-list>
+              <ion-item color="light"></ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+  </div>
+</ion-content>
