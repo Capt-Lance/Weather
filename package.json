@@ -8,11 +8,14 @@
     "ionic_copy": "./config/copy.config.js",
     "ionic_sass": "./config/sass.config.js"
   },
+  "main": "main.js",
   "scripts": {
     "start": "ionic-app-scripts serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "lint": "ionic-app-scripts lint",
+    "electron": "electron .",
+    "electron-build": "ionic build && electron ."
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.11",
+    "electron": "^2.0.8",
     "typescript": "~2.6.2"
   },
   "description": "An Ionic project"
